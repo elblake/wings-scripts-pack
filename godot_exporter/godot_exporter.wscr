@@ -1,0 +1,4 @@
+type "py"
+name ?__(1,"Godot Mesh Library (.tres)")
+mode "export"
+include "(%)_dialog.inclr"

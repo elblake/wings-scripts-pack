@@ -1,0 +1,4 @@
+type "py"
+name ?__(1,"Panda3D Egg (.egg)")
+mode "export"
+include "(%)_dialog.inclr"

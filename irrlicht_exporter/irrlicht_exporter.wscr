@@ -1,0 +1,4 @@
+type "py"
+name ?__(1,"Irrlicht Mesh (.irrmesh)")
+mode "export"
+include "(%)_dialog.inclr"

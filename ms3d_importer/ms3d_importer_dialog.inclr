@@ -1,0 +1,10 @@
+params_title ?__(3,"Milkshape3D Importer Settings")
+params_templates {
+  template "import" "include_colors"
+}
+params_set {
+  import_param "script_texture_convert" "'auto'"
+}
+extensions {
+  ext ".ms3d" ?__(4,"Milkshape3D Format")
+}

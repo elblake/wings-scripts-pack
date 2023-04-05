@@ -1,0 +1,4 @@
+type "py"
+name ?__(1,"Milkshape3D (.ms3d)")
+mode "export"
+include "(%)_dialog.inclr"

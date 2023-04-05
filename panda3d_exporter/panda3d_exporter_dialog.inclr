@@ -1,0 +1,14 @@
+params_title ?__(3,"Panda3D Egg Exporter Settings")
+params_templates {
+  template "export" "include_colors"
+}
+params_set {
+  export_param "include_uvs"  "'true'"
+  export_param "subdivisions" "params/subdivisions"
+  export_param "include_normals" "'true'"
+  export_param "include_hard_edges" "bool(params/include_normals)"
+  export_param "script_texture_convert" "'user'"
+}
+extensions {
+  ext ".egg" ?__(5,"Panda3D Egg File")
+}

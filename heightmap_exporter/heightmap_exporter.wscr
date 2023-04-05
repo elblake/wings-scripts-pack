@@ -1,0 +1,4 @@
+type "scm"
+name ?__(1,"Bitmap 16-bit Height Map (.pgm)")
+mode "export"
+include "(%)_dialog.inclr"

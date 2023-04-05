@@ -1,0 +1,16 @@
+params_title ?__(3,"Pixel Art onto Shape")
+extra_file "icon" {
+  title "Choose small image"
+  extensions {
+    ext ".ppm" "Portable Pixmap"
+    ext ".pgm" "Portable Greymap"
+    ext ".pbm" "Portable Bitmap"
+  }
+}
+params {
+  param "Size" "2.0"
+  param "Thickness" "0.1"
+  param "Mask Color R" "100"
+  param "Mask Color G" "100"
+  param "Mask Color B" "100"
+}

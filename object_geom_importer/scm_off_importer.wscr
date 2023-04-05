@@ -1,0 +1,4 @@
+type "scm"
+name ?__(1,"Object Geometry (.off)")
+mode "import"
+include "(%)_dialog.inclr"

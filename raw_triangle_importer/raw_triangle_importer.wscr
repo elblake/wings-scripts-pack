@@ -1,0 +1,4 @@
+type "scm"
+name ?__(1,"Raw Triangles (.raw)")
+mode "import"
+include "(%)_dialog.inclr"

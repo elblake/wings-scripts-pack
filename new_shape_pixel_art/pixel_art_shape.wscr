@@ -1,0 +1,4 @@
+type "py"
+name ?__(1,"Pixel Art Shape")
+desc ?__(2,"Take an icon (.ppm) and turn it into rows and columns of cubes")
+include "(%)_dialog.inclr"

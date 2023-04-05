@@ -1,0 +1,11 @@
+params_title ?__(3,"Raw Triangles Importer Settings")
+params_templates {
+  template "import" "include_colors"
+}
+params_set {
+  import_param "script_texture_convert" "'auto'"
+}
+extensions {
+  ext ".raw" ?__(5,"Raw Triangles")
+}
+
