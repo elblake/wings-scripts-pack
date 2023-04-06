@@ -1,2 +1,30 @@
 
 A set of scripts for use with Wings3D with the scripting plugin installed.
+
+Explanation of file types in the pack:
+
+.wscr
+These files contain information about the script, such as its name, the kind of
+script it is (import, export, etc.), and a short description that appears in the
+script chooser dialog. The .py or .scm file with the same name before the
+extension as the .wscr file is the script that the script chooser will run.
+Every script needs a .wscr file for it to appear in the script chooser dialog.
+Scripts that generate new shapes don't have a mode setting, importers use
+mode "import", exporters use mode "export", and simple commands that modify
+point coordinates or change vertex attributes of an object use
+mode "simple_body_command"
+
+.inclr
+To keep the .wscr file small, information such as the parameter dialog content,
+and many settings for the script are in a separate .inclr file, usually called
+script_name_dialog.inclr, which is referenced from a script_name.wscr file with:
+include "(%)_dialog.inclr"
+The "(%)" auto expands to the file name "script_name" before the .wscr extension.
+
+.py
+Python source files.
+
+.scm
+Scheme source files.
+
+
