@@ -2,11 +2,11 @@ params_title ?__(3,"Bitmap Height Map Export Options")
 params {
   param "Size:" "64" "pixel_width"
   param "Sub-division Steps:" "0" "subdivisions"
-  param "XZ Scale:" "0.0625" "scale_xz"
-  param "Y Scale:" "50.0" "scale_y"
-  param "X Translate:" "-2.0" "trl_x"
-  param "Y Translate:" "0.0" "trl_y"
-  param "Z Translate:" "-2.0" "trl_z"
+  param "X Z View:" "4.0" "scale_xz"
+  param "Y Scale:" "16000.0" "scale_y"
+  param "X View Translate:" "-2.0" "trl_x"
+  param "Y Translate:" "32767.0" "trl_y"
+  param "Z View Translate:" "-2.0" "trl_z"
 }
 params_set {
   export_param "tesselation"  "'triangulate'"

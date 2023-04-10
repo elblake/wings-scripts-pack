@@ -10,7 +10,7 @@ extra_file "icon" {
 params {
   param "Size" "2.0"
   param "Thickness" "0.1"
-  param "Mask Color R" "100"
-  param "Mask Color G" "100"
-  param "Mask Color B" "100"
+  param "Mask Color R" "254"
+  param "Mask Color G" "2"
+  param "Mask Color B" "253"
 }

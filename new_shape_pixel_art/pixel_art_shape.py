@@ -13,10 +13,6 @@ import w3d_newshape
 import sys
 from os import path
 
-TRANSPARENT_RED = 254
-TRANSPARENT_GREEN = 2
-TRANSPARENT_BLUE = 253
-
 def remove_comment(ln):
 	wherecomment = ln.find("#")
 	if wherecomment == -1:
@@ -45,7 +41,7 @@ class VerticesAndFaces:
 		self.tx = []
 
 ## Read PPM file
-def from_ppm(filename):
+def from_ppm(filename, tr_red, tr_grn, tr_blu):
 	fp = open(filename, "rb")
 	ppm_sig = read_non_blank(fp) # P3
 	if (ppm_sig != 'P3') and (ppm_sig != 'P6'):
@@ -67,7 +63,7 @@ def from_ppm(filename):
 				r = int(l2[i2])
 				g = int(l2[i2+1])
 				b = int(l2[i2+2])
-				if not ((r == TRANSPARENT_RED) and (g == TRANSPARENT_GREEN) and (b == TRANSPARENT_BLUE)):
+				if not ((r == tr_red) and (g == tr_grn) and (b == tr_blu)):
 					pixel = (r, g, b)
 				else:
 					pixel = None
@@ -83,7 +79,7 @@ def from_ppm(filename):
 				r = rgb[0]
 				g = rgb[1]
 				b = rgb[2]
-				if not ((r == TRANSPARENT_RED) and (g == TRANSPARENT_GREEN) and (b == TRANSPARENT_BLUE)):
+				if not ((r == tr_red) and (g == tr_grn) and (b == tr_blu)):
 					pixel = (r, g, b)
 				else:
 					pixel = None
@@ -123,7 +119,7 @@ def from_pbm(filename):
 	return (width, height, img)
 
 ## Read PGM file
-def from_pgm(filename):
+def from_pgm(filename, tr_red):
 	fp = open(filename, "rb")
 	ppm_sig = read_non_blank(fp) # P3
 	if (ppm_sig != 'P2') and (ppm_sig != 'P5'):
@@ -145,7 +141,7 @@ def from_pgm(filename):
 				r = int(l2[i2])
 				g = int(l2[i2])
 				b = int(l2[i2])
-				if not ((r == TRANSPARENT_RED) and (g == TRANSPARENT_GREEN) and (b == TRANSPARENT_BLUE)):
+				if not ((r == tr_red) and (g == tr_red) and (b == tr_red)):
 					pixel = (r, g, b)
 				else:
 					pixel = None
@@ -161,7 +157,7 @@ def from_pgm(filename):
 				r = rgb[0]
 				g = rgb[0]
 				b = rgb[0]
-				if not ((r == TRANSPARENT_RED) and (g == TRANSPARENT_GREEN) and (b == TRANSPARENT_BLUE)):
+				if not ((r == tr_red) and (g == tr_red) and (b == tr_red)):
 					pixel = (r, g, b)
 				else:
 					pixel = None
@@ -171,12 +167,12 @@ def from_pgm(filename):
 	return (width, height, img)
 
 
-def read_emboss_icon(filename):
+def read_emboss_icon(filename, tr_red, tr_grn, tr_blu):
 	ext = filename[-4:]
 	if ext == '.ppm':
-		(width, height, img) = from_ppm(filename)
+		(width, height, img) = from_ppm(filename, tr_red, tr_grn, tr_blu)
 	elif ext == '.pgm':
-		(width, height, img) = from_pgm(filename)
+		(width, height, img) = from_pgm(filename, tr_red)
 	elif ext == '.pbm':
 		(width, height, img) = from_pbm(filename)
 	else:
@@ -190,7 +186,7 @@ def read_emboss_icon(filename):
 	
 	for irow in range(0, height):
 		for icol in range(0, width):
-			emit_poly_pixel(icol,irow,img[irow][icol], on_base, ply)
+			emit_poly_pixel(icol,irow,img[irow][icol], on_base, ply, size, thickness)
 	
 	return (ply, mats)
 	
@@ -198,17 +194,18 @@ def rv(l):
 	l.reverse()
 	return l
 	
-def plp(xo, yo, x, y, z):
-	return ((xo * 2.0 + 1.0 * x, 1.0 * y, -(yo * 2.0 + 1.0 * z)))
+def plp(xo, yo, x, y, z, size):
+	return ((xo * size + x, y, -(yo * size + z)))
 
 
-def emit_poly_pixel(x, y, color, on_base, ply):
+def emit_poly_pixel(x, y, color, on_base, ply, size, thickness):
+	h_size = size / 2.0
 	if color == None:
 		if on_base:
-			ply.vs.append(plp(x, y, -1.0, -1.0, -1.0))
-			ply.vs.append(plp(x, y, 1.0, -1.0, -1.0))
-			ply.vs.append(plp(x, y, 1.0, -1.0, 1.0))
-			ply.vs.append(plp(x, y, -1.0, -1.0, 1.0))
+			ply.vs.append(plp(x, y, -h_size, -thickness, -h_size, size))
+			ply.vs.append(plp(x, y, h_size, -thickness, -h_size, size))
+			ply.vs.append(plp(x, y, h_size, -thickness, h_size, size))
+			ply.vs.append(plp(x, y, -h_size, -thickness, h_size, size))
 			## If it is on a base, fill in something here
 			ply.fs.append((None, [ply.offset + 0, ply.offset + 1, ply.offset + 2, ply.offset + 3]))
 			ply.offset += 4
@@ -223,14 +220,14 @@ def emit_poly_pixel(x, y, color, on_base, ply):
 		p = (ib * 3 * 3 + ig * 3 + ir)
 		mname = "Material0" + str(p)
 		
-		ply.vs.append(plp(x, y, -1.0, 1.0, -1.0))
-		ply.vs.append(plp(x, y, 1.0, 1.0, -1.0))
-		ply.vs.append(plp(x, y, 1.0, 1.0, 1.0))
-		ply.vs.append(plp(x, y, -1.0, 1.0, 1.0))
-		ply.vs.append(plp(x, y, -1.0, -1.0, -1.0))
-		ply.vs.append(plp(x, y, 1.0, -1.0, -1.0))
-		ply.vs.append(plp(x, y, 1.0, -1.0, 1.0))
-		ply.vs.append(plp(x, y, -1.0, -1.0, 1.0))
+		ply.vs.append(plp(x, y, -h_size, thickness, -h_size, size))
+		ply.vs.append(plp(x, y, h_size, thickness, -h_size, size))
+		ply.vs.append(plp(x, y, h_size, thickness, h_size, size))
+		ply.vs.append(plp(x, y, -h_size, thickness, h_size, size))
+		ply.vs.append(plp(x, y, -h_size, -thickness, -h_size, size))
+		ply.vs.append(plp(x, y, h_size, -thickness, -h_size, size))
+		ply.vs.append(plp(x, y, h_size, -thickness, h_size, size))
+		ply.vs.append(plp(x, y, -h_size, -thickness, h_size, size))
 		ply.fs.append((mname, [ply.offset + 0, ply.offset + 1, ply.offset + 2, ply.offset + 3]))
 		ply.fs.append((mname, [ply.offset + 7, ply.offset + 6, ply.offset + 5, ply.offset + 4]))
 		ply.fs.append((mname, [ply.offset + 0, ply.offset + 0+4, ply.offset + 1+4, ply.offset + 1]))
@@ -262,10 +259,10 @@ def emit_poly_materials(mats):
 				newmat.name = "Material0" + str(p)
 				mats.mats.append(newmat)
 
-def emboss_icon(filename, attr):
+def emboss_icon(filename, size, thickness, tr_red, tr_grn, tr_blu):
 	objname = path.splitext(path.basename(filename))[0]
 	
-	(ply, mats) = read_emboss_icon(filename)
+	(ply, mats) = read_emboss_icon(filename, tr_red, tr_grn, tr_blu)
 	vs = ply.vs
 	faces = ply.fs
 	
@@ -296,4 +293,9 @@ def emboss_icon(filename, attr):
 
 
 filename = extra_params["icon"]
-emboss_icon(filename, {})
+size = params[0]
+thickness = params[1]
+tr_red = params[2]
+tr_grn = params[3]
+tr_blu = params[4]
+emboss_icon(filename, size, thickness, tr_red, tr_grn, tr_blu)
