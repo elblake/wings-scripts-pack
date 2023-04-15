@@ -22,7 +22,7 @@
 (define center_z (list-ref *params* 2))
 
 (define ripple_amp (list-ref *params* 3))
-(define ripple_freq (/ (* 2.0 3.141592) (list-ref *params* (list-ref *params* 4))))
+(define ripple_freq (/ (* 2.0 3.141592) (list-ref *params* 4)))
 
 (define (get_distance x y z)
 	(define xz (sqrt (+ (* x x) (* z z))))

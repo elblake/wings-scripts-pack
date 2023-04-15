@@ -1,0 +1,18 @@
+params_title ?__(3,"Wavey Color Options")
+command_inputs "points,faces"
+command_changes "face_colors"
+params {
+  param "R Amplitude" "0.1"
+  param "G Amplitude" "0.5"
+  param "B Amplitude" "0.2"
+  
+  param "R Wave Angle" "45.0"
+  param "G Wave Angle" "100.0"
+  param "B Wave Angle" "20.0"
+  
+  param "R Period" "2.0"
+  param "G Period" "3.0"
+  param "B Period" "4.0"
+  
+  param "Mix" "0.3"
+}

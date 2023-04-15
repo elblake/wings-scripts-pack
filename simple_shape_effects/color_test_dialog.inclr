@@ -1,0 +1,6 @@
+params_title ?__(3,"Color test Options")
+command_inputs "points,faces"
+command_changes "face_colors"
+params {
+  param "Mix" "0.3"
+}
