@@ -215,6 +215,7 @@
 
 (define (triangle_list VList Faces)
 	(define VList_1 (list->vector VList))
+	(wings-pb-message "Creating triangle list")
 	(filter (lambda (VL) (not (eq? VL #f)))
 		(map (lambda (VL)
 				(define Coord1 (vector-ref VList_1 (list-ref VL 0)))
@@ -243,6 +244,7 @@
 	(define MinZ (+ 0.0 TrlZ))
 	(define MaxZ (+ (* LenZ SclZ) TrlZ))
 	
+	(wings-pb-message "Filter to triangles in the scene")
 	(filter (lambda (Tri)
 				(define T1X (vector-ref Tri 0))
 				(define T1Z (vector-ref Tri 2))
@@ -265,11 +267,13 @@
 	(define Tris (filter_triangles (triangle_list VList Faces)
 	                               LenX LenZ SclX SclZ TrlX TrlZ))
 	(define Heights_0 (levels Tris LenX LenZ SclX SclZ TrlX TrlZ))
+	(wings-pb-message "Clipping heights to integers")
 	(integer_clip Heights_0 MaxVal SclY TrlY))
 	
 (define (mesh_to_pgm FileNm VList Faces LenX LenZ SclX SclY SclZ TrlX TrlY TrlZ)
 	(define MaxVal 65534)
 	(define Heights (mesh_to_heights VList Faces MaxVal LenX LenZ SclX SclY SclZ TrlX TrlY TrlZ))
+	(wings-pb-message "Writing file")
 	(if (> (length Heights) 32)
 		(write_to_pgm_binary FileNm Heights MaxVal)
 		(write_to_pgm_ascii FileNm Heights MaxVal))
@@ -286,8 +290,11 @@
 	
 	(let ((Vs (e3d_mesh-vs Mesh)))
 		(define Faces (map (lambda (X) (e3d_face-vs X)) (e3d_mesh-fs Mesh)))
-		(mesh_to_pgm Filename Vs Faces PixelWidth PixelWidth ScaleXZ ScaleY ScaleXZ TrlX TrlY TrlZ)
-	
+		(long-running-process 
+			(lambda()
+				(mesh_to_pgm Filename Vs Faces PixelWidth PixelWidth ScaleXZ ScaleY ScaleXZ TrlX TrlY TrlZ)
+				))
+		
 		(newline)
 		(write '(ok))
 		)
