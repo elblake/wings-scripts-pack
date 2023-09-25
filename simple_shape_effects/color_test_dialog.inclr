@@ -1,6 +1,7 @@
 params_title ?__(3,"Color test Options")
+params_preview 1
 command_inputs "points,faces"
 command_changes "face_colors"
 params {
-  param "Mix" "0.3"
+  param ?__(4,"Opacity") "0.3"
 }

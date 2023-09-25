@@ -1,0 +1,9 @@
+{script,
+ [
+  {wscr,
+   [
+	{1,"Color test"},
+	{3,"Color test Options"},
+	{4,"Opacity"}
+   ]}
+ ]}.

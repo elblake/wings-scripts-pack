@@ -1,0 +1,18 @@
+{script,
+ [
+  {wscr,
+   [
+	{1,"Wavey Translate"},
+	{2,"A wave is translated into the points of the object, creating a wavey surface, most useful to apply to a multisegmented plane."},
+	{3,"Wavey Translate Options"},
+	{4,"X Amplitude"},
+	{5,"Y Amplitude"},
+	{6,"Z Amplitude"},
+	{7,"X Wave Angle"},
+	{8,"Y Wave Angle"},
+	{9,"Z Wave Angle"},
+	{10,"X Period"},
+	{11,"Y Period"},
+	{12,"Z Period"}
+   ]}
+ ]}.

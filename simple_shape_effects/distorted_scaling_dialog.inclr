@@ -1,11 +1,12 @@
 params_title ?__(3,"Distorted Scaling Options")
+params_preview 1
 command_inputs "points,faces,face_colors"
 command_changes "points"
 params {
-  param "Center X" "0.0"
-  param "Center Y" "0.0"
-  param "Center Z" "0.0"
+  param ?__(4,"Center X") "0.0"
+  param ?__(5,"Center Y") "0.0"
+  param ?__(6,"Center Z") "0.0"
   
-  param "Ripple Amp" "0.1"
-  param "Ripple Period" "2.0"
+  param ?__(7,"Ripple Amp") "0.1"
+  param ?__(8,"Ripple Period") "2.0"
 }

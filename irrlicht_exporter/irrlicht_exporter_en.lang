@@ -1,0 +1,9 @@
+{script,
+ [
+  {wscr,
+   [
+	{1,"Irrlicht Mesh (.irrmesh)"},
+	{3,"Irrlicht Mesh Exporter Settings"},
+	{5,"Irrlicht Mesh"}
+   ]}
+ ]}.

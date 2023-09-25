@@ -400,7 +400,7 @@
 ;;;
 ;;;
 
-(define (exporter)
+(define (exporter *params* *extra-params*)
 	;; e3d_file tuple is found in "content" of extra parameters, and the
 	;; filename to export to is in filename.
 	;;
@@ -411,4 +411,4 @@
 	)
 
 ; UNCOMMENT: 
-(exporter)
+(main-function exporter)

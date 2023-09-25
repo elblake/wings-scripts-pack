@@ -215,7 +215,7 @@
 
 (define (triangle_list VList Faces)
 	(define VList_1 (list->vector VList))
-	(wings-pb-message "Creating triangle list")
+	(wings-pb-message (?__ 20 "Creating triangle list"))
 	(filter (lambda (VL) (not (eq? VL #f)))
 		(map (lambda (VL)
 				(define Coord1 (vector-ref VList_1 (list-ref VL 0)))
@@ -244,7 +244,7 @@
 	(define MinZ (+ 0.0 TrlZ))
 	(define MaxZ (+ (* LenZ SclZ) TrlZ))
 	
-	(wings-pb-message "Filter to triangles in the scene")
+	(wings-pb-message (?__ 21 "Filter to triangles in the scene"))
 	(filter (lambda (Tri)
 				(define T1X (vector-ref Tri 0))
 				(define T1Z (vector-ref Tri 2))
@@ -267,13 +267,13 @@
 	(define Tris (filter_triangles (triangle_list VList Faces)
 	                               LenX LenZ SclX SclZ TrlX TrlZ))
 	(define Heights_0 (levels Tris LenX LenZ SclX SclZ TrlX TrlZ))
-	(wings-pb-message "Clipping heights to integers")
+	(wings-pb-message (?__ 22 "Clipping heights to integers"))
 	(integer_clip Heights_0 MaxVal SclY TrlY))
 	
 (define (mesh_to_pgm FileNm VList Faces LenX LenZ SclX SclY SclZ TrlX TrlY TrlZ)
 	(define MaxVal 65534)
 	(define Heights (mesh_to_heights VList Faces MaxVal LenX LenZ SclX SclY SclZ TrlX TrlY TrlZ))
-	(wings-pb-message "Writing file")
+	(wings-pb-message (?__ 23 "Writing file"))
 	(if (> (length Heights) 32)
 		(write_to_pgm_binary FileNm Heights MaxVal)
 		(write_to_pgm_ascii FileNm Heights MaxVal))
@@ -363,10 +363,10 @@
 					)))
 	)))
 	
-(define (get_param x)
-	(car (car (cdr (assoc x *params*)))))
+(define (exporter *params* *extra-params*)
+	(define (get_param x)
+		(car (car (cdr (assoc x *params*)))))
 
-(define (exporter)
 	;; e3d_file tuple is found in "content" of extra parameters, and the
 	;; filename to export to is in filename.
 	;;
@@ -383,4 +383,4 @@
 	(export_fun Filename Content PixelWidth (/ ScaleXZ PixelWidth) ScaleY TrlX TrlY TrlZ)
 	)
 
-(exporter)
+(main-function exporter)

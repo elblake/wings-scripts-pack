@@ -1,0 +1,9 @@
+{script,
+ [
+  {wscr,
+   [
+	{1,"Panda3D Egg (.egg)"},
+	{3,"Panda3D Egg Exporter Settings"},
+	{5,"Panda3D Egg File"}
+   ]}
+ ]}.

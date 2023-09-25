@@ -110,9 +110,9 @@ def import_fun(attr, filename):
 	o_ok.add_list(e3df.as_output_list())
 	o_ok.write_list_out(sys.stdout)
 
-def importer():
+def importer(params, params_by_key, extra_params):
 	filename = extra_params["filename"]
 	import_fun({}, filename)
 
-importer()
+w3d_main_function = importer
 

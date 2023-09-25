@@ -1,0 +1,19 @@
+{script,
+ [
+  {wscr,
+   [
+	{1,"Wavey Color"},
+	{2,"Wavey Color Effect"},
+	{3,"Wavey Color Options"},
+	{4,"R Amplitude"},
+	{5,"G Amplitude"},
+	{6,"B Amplitude"},
+	{7,"R Wave Angle"},
+	{8,"G Wave Angle"},
+	{9,"B Wave Angle"},
+	{10,"R Period"},
+	{11,"G Period"},
+	{12,"B Period"},
+	{13,"Opacity"}
+   ]}
+ ]}.

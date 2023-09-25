@@ -1,0 +1,14 @@
+{script,
+ [
+  {wscr,
+   [
+	{1,"Distorted Scaling"},
+	{2,"The amount of scaling applied on each point depends on its location by sin(x), sin(y), sin(z), such that some points get scaled more than others, creating a distorted effect."},
+	{3,"Distorted Scaling Options"},
+	{4,"Center X"},
+	{5,"Center Y"},
+	{6,"Center Z"},
+	{7,"Ripple Amp"},
+	{8,"Ripple Period"}
+   ]}
+ ]}.

@@ -1,0 +1,9 @@
+{script,
+ [
+  {wscr,
+   [
+	{1,"Milkshape3D (.ms3d)"},
+	{3,"Milkshape3D Exporter Settings"},
+	{5,"Milkshape3D Format"}
+   ]}
+ ]}.

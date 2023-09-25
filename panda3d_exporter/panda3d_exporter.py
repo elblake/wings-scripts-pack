@@ -228,11 +228,11 @@ def panda3d_vlist_index(list, newvert):
 		return ( newidx, list )
 
 
-def exporter():
+def exporter(params, params_by_key, extra_params):
 	filename = extra_params["filename"]
 	content = w3d_e3d.E3DFile()
 	content.load_from(extra_params["content"])
 	export_fun({}, filename, content)
 
-exporter()
+w3d_main_function = exporter
 

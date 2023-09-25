@@ -382,7 +382,7 @@
     (apply append (map (lambda (F) (edge_pairs F)) FL))
 	)
 
-(define (importer)
+(define (importer *params* *extra-params*)
 	;; the filename to import from is in "filename" of extra parameters.
 	;;
 	(define Filename (list-ref (assoc "filename" *extra-params*) 1))
@@ -412,4 +412,4 @@
 
 
 ;UNCOMMENT:
-(importer)
+(main-function importer)

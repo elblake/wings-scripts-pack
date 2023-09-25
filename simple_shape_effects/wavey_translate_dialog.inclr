@@ -1,16 +1,17 @@
 params_title ?__(3,"Wavey Translate Options")
+params_preview 1
 command_inputs "points,faces,face_colors"
 command_changes "points,face_colors"
 params {
-  param "X Amplitude" "0.1"
-  param "Y Amplitude" "0.5"
-  param "Z Amplitude" "0.2"
+  param ?__(4,"X Amplitude") "0.1"
+  param ?__(5,"Y Amplitude") "0.5"
+  param ?__(6,"Z Amplitude") "0.2"
   
-  param "X Wave Angle" "45.0"
-  param "Y Wave Angle" "100.0"
-  param "Z Wave Angle" "20.0"
+  param ?__(7,"X Wave Angle") "45.0"
+  param ?__(8,"Y Wave Angle") "100.0"
+  param ?__(9,"Z Wave Angle") "20.0"
   
-  param "X Period" "2.0"
-  param "Y Period" "3.0"
-  param "Z Period" "4.0"
+  param ?__(10,"X Period") "2.0"
+  param ?__(11,"Y Period") "3.0"
+  param ?__(12,"Z Period") "4.0"
 }

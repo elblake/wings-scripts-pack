@@ -1,0 +1,20 @@
+{script,
+ [
+  {wscr,
+   [
+	{1,"Bitmap 16-bit Height Map (.pgm)"},
+	{3,"Bitmap Height Map Export Options"},
+	{5,"Portable Grey Map"}
+	{6,"Size:"},
+	{7,"Sub-division Steps:"},
+	{8,"X Z View:"},
+	{9,"Y Scale:"},
+	{10,"X View Translate:"},
+	{11,"Y Translate:"},
+	{12,"Z View Translate:"},
+	{20,"Creating triangle list"},
+	{21,"Filter to triangles in the scene"},
+	{22,"Clipping heights to integers"},
+	{23,"Writing file"}
+   ]}
+ ]}.

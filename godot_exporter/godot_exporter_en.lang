@@ -1,0 +1,9 @@
+{script,
+ [
+  {wscr,
+   [
+	{1,"Godot Mesh Library (.tres)"},
+	{3,"Godot Mesh Library Exporter Settings"},
+	{5,"Godot Mesh Library"}
+   ]}
+ ]}.

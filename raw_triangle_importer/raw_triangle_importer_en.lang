@@ -1,0 +1,10 @@
+{script,
+ [
+  {wscr,
+   [
+	{1,"Raw Triangles (.raw)"},
+	{3,"Raw Triangles Importer Settings"},
+	{5,"Raw Triangles"}
+   ]}
+ ]}.
+

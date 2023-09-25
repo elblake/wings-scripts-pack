@@ -291,11 +291,13 @@ def emboss_icon(filename, size, thickness, tr_red, tr_grn, tr_blu):
 	o = nshp.as_output_list()
 	o.write_list_out(sys.stdout)
 
+def command(params, params_by_key, extra_params):
+	filename = extra_params["icon"]
+	size = params[0]
+	thickness = params[1]
+	tr_red = params[2]
+	tr_grn = params[3]
+	tr_blu = params[4]
+	emboss_icon(filename, size, thickness, tr_red, tr_grn, tr_blu)
 
-filename = extra_params["icon"]
-size = params[0]
-thickness = params[1]
-tr_red = params[2]
-tr_grn = params[3]
-tr_blu = params[4]
-emboss_icon(filename, size, thickness, tr_red, tr_grn, tr_blu)
+w3d_main_function = command

@@ -1,0 +1,18 @@
+{script,
+ [
+  {wscr,
+   [
+	{1,"Pixel Art Shape"},
+	{2,"Take an icon (.ppm) and turn it into rows and columns of cubes"},
+	{3,"Pixel Art onto Shape"},
+	{4,"Choose small image"},
+	{5,"Portable Pixmap"},
+	{6,"Portable Greymap"},
+	{7,"Portable Bitmap"},
+	{8,"Size"},
+	{9,"Thickness"},
+	{10,"Mask Color R"},
+	{11,"Mask Color G"},
+	{12,"Mask Color B"}
+   ]}
+ ]}.

@@ -1,0 +1,9 @@
+{script,
+ [
+  {wscr,
+   [
+	{1,"Object Geometry (.off)"},
+	{3,"Object Geometry Exporter Settings"},
+	{5,"OFF Geometry"}
+   ]}
+ ]}.
