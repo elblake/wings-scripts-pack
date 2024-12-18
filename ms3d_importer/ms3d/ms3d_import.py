@@ -23,7 +23,7 @@ READER_DIRTY = 8
 def file_read_str(fp, size):
 	strval = fp.read(size)
 	strval = strval.rstrip(b'\0')
-	return strval.decode('ansi') # 'iso-8859-1' ?
+	return strval.decode('ascii') # 'iso-8859-1' ?
 def file_read_u8_maybe(fp):
 	## 1 byte
 	bt = fp.read(1)
