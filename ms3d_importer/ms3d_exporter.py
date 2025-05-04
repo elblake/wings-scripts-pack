@@ -109,17 +109,15 @@ def export_fun(attr, filename, content):
 	
 	ms3d_export.write_ms3d_file(filename, ms3df)
 	
-	print("")
-	o = OutputList()
-	o.add_symbol("ok")
-	o.write_list_out(sys.stdout)
+	
+	return Okay()
 
 
 def exporter(params, params_by_key, extra_params):
 	filename = extra_params["filename"]
 	content = w3d_e3d.E3DFile()
 	content.load_from(extra_params["content"])
-	export_fun({}, filename, content)
+	return export_fun({}, filename, content)
 
 w3d_main_function = exporter
 

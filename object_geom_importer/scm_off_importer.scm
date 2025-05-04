@@ -64,8 +64,7 @@
 		
 		(define Obj (make-e3d_object `(name ,ObjName) `(obj ,Mesh)))
 
-		(newline)
-		(write (list 'ok (make-e3d_file `(objs ,(list Obj)))))
+		(list 'ok (make-e3d_file `(objs ,(list Obj))))
 		
 	))
 

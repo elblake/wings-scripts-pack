@@ -1,5 +1,5 @@
 type "scm"
 name ?__(1,"Wavey Color")
 desc ?__(2,"Wavey Color Effect")
-mode "simple_body_command"
+mode "face,body"
 include "(%)_dialog.inclr"

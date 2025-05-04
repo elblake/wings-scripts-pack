@@ -282,14 +282,12 @@ def emboss_icon(filename, size, thickness, tr_red, tr_grn, tr_blu):
 	e3d_o = w3d_e3d.E3DObject()
 	e3d_o.obj = mesh
 	
-	print("")
 	nshp = w3d_newshape.NewShape()
 	nshp.prefix = objname
 	nshp.obj = e3d_o
 	for m in mats.mats:
 		nshp.mat.append(m)
-	o = nshp.as_output_list()
-	o.write_list_out(sys.stdout)
+	return nshp
 
 def command(params, params_by_key, extra_params):
 	filename = extra_params["icon"]

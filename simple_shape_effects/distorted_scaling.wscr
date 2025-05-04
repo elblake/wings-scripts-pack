@@ -1,5 +1,5 @@
 type "scm"
 name ?__(1,"Distorted Scaling")
 desc ?__(2,"The amount of scaling applied on each point depends on its location by sin(x), sin(y), sin(z), such that some points get scaled more than others, creating a distorted effect.")
-mode "simple_body_command"
+mode "face,body"
 include "(%)_dialog.inclr"

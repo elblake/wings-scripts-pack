@@ -104,10 +104,8 @@ def export_fun(attr, filename, content):
 			buffers.append((m, vertices, faces))
 	write_irr_file(filename, buffers)
 	
-	print("")
-	o = OutputList()
-	o.add_symbol("ok")
-	o.write_list_out(sys.stdout)
+	
+	return Okay()
 
 
 def write_irr_file(flname, buffers):
@@ -395,7 +393,7 @@ def exporter(params, params_by_key, extra_params):
 	filename = extra_params["filename"]
 	content = w3d_e3d.E3DFile()
 	content.load_from(extra_params["content"])
-	export_fun({}, filename, content)
+	return export_fun({}, filename, content)
 
 w3d_main_function = exporter
 

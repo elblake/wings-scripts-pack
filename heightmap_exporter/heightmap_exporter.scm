@@ -295,8 +295,7 @@
 				(mesh_to_pgm Filename Vs Faces PixelWidth PixelWidth ScaleXZ ScaleY ScaleXZ TrlX TrlY TrlZ)
 				))
 		
-		(newline)
-		(write '(ok))
+		'(ok)
 		)
 	)
 
@@ -379,7 +378,7 @@
 	(define TrlY (get_param 'trl_y))
 	(define TrlZ (get_param 'trl_z))
 
-	(newline)
+	
 	(export_fun Filename Content PixelWidth (/ ScaleXZ PixelWidth) ScaleY TrlX TrlY TrlZ)
 	)
 

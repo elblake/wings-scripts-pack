@@ -2,8 +2,9 @@
  [
   {wscr,
    [
-	{1,"Milkshape3D (.ms3d)"},
+	{1,"Milkshape3D (.ms3d, .txt)"},
 	{3,"Milkshape3D Importer Settings"},
-	{4,"Milkshape3D Format"}
+	{4,"Milkshape3D Format"},
+	{5,"Milkshape3D Text Format"}
    ]}
  ]}.

@@ -101,18 +101,14 @@ def import_fun(attr, filename):
 			
 		mats.append(nmat)
 	
-	print("")
 	e3df = w3d_e3d.E3DFile()
 	e3df.objs = objs
 	e3df.mat = mats
-	o_ok = OutputList()
-	o_ok.add_symbol("ok")
-	o_ok.add_list(e3df.as_output_list())
-	o_ok.write_list_out(sys.stdout)
+	return Okay(e3df)
 
 def importer(params, params_by_key, extra_params):
 	filename = extra_params["filename"]
-	import_fun({}, filename)
+	return import_fun({}, filename)
 
 w3d_main_function = importer
 

@@ -1,4 +1,4 @@
 type "py"
-name ?__(1,"Milkshape3D (.ms3d)")
+name ?__(1,"Milkshape3D (.ms3d, .txt)")
 mode "export"
 include "(%)_dialog.inclr"

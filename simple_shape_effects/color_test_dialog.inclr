@@ -3,5 +3,5 @@ params_preview 1
 command_inputs "points,faces"
 command_changes "face_colors"
 params {
-  param ?__(4,"Opacity") "0.3"
+  param ?__(4,"Opacity") 0.3
 }

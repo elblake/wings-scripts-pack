@@ -1,4 +1,4 @@
 type "scm"
 name ?__(1,"Color test")
-mode "simple_body_command"
+mode "face,body"
 include "(%)_dialog.inclr"

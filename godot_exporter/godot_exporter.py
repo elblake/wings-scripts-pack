@@ -161,10 +161,8 @@ def export_fun(attr, filename, content):
 		objs_1.append((objname, mgroup))
 	write_godot_file(filename, objs_1, content.mat)
 	
-	print("")
-	o = OutputList()
-	o.add_symbol("ok")
-	o.write_list_out(sys.stdout)
+	
+	return Okay()
 
 
 def godot_vlist_for_objs(vntc, blist):
@@ -250,6 +248,6 @@ def exporter(params, params_by_key, extra_params):
 	filename = extra_params["filename"]
 	content = w3d_e3d.E3DFile()
 	content.load_from(extra_params["content"])
-	export_fun({}, filename, content)
+	return export_fun({}, filename, content)
 
 w3d_main_function = exporter

@@ -58,8 +58,7 @@
 				(vector a (per_point x y z)))
 		) points))
 
-	(newline)
-	(write (list (list 'set_points newpoints)))
+	(list (list 'set_points newpoints))
 	)
 
 (main-function command)

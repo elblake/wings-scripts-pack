@@ -1,15 +1,16 @@
 params_title ?__(3,"Milkshape3D Exporter Settings")
 params_templates {
-  template "export" "include_colors"
+  template export include_colors
 }
 params_set {
-  export_param "tesselation"  "'triangulate'"
-  export_param "include_uvs"  "'true'"
-  export_param "subdivisions" "params/subdivisions"
-  export_param "include_normals" "'true'"
-  export_param "include_hard_edges" "bool(params/include_normals)"
-  export_param "script_texture_convert" "'user'"
+  export_param tesselation  'triangulate'
+  export_param include_uvs  'true'
+  export_param subdivisions %[params/subdivisions]
+  export_param include_normals 'true'
+  export_param include_hard_edges %[bool(params/include_normals)]
+  export_param script_texture_convert 'user'
 }
 extensions {
-  ext ".ms3d" ?__(5,"Milkshape3D Format")
+  ext .ms3d ?__(4,"Milkshape3D Format")
+  ext .txt ?__(5,"Milkshape3D Text Format")
 }

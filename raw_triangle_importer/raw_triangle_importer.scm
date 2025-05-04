@@ -205,8 +205,7 @@
 		
 	
 
-	(newline)
-	(write (list 'ok (make-e3d_file `(objs ,Objs_1))))
+	(list 'ok (make-e3d_file `(objs ,Objs_1)))
 	)
 
 ;;;

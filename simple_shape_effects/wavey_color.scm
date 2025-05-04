@@ -95,8 +95,7 @@
 		) Faces))
 		
 
-	(newline)
-	(write (list (list 'set_face_colors NewFaceColors)))
+	(list (list 'set_face_colors NewFaceColors))
 	)
 
 (main-function command)

@@ -1,5 +1,5 @@
 type "scm"
 name ?__(1,"Wavey Translate")
 desc ?__(2,"A wave is translated into the points of the object, creating a wavey surface, most useful to apply to a multisegmented plane.")
-mode "simple_body_command"
+mode "face,body"
 include "(%)_dialog.inclr"

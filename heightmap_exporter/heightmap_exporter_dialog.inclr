@@ -1,20 +1,20 @@
 params_title ?__(3,"Bitmap Height Map Export Options")
 params {
-  param ?__(6,"Size:") "64" "pixel_width"
-  param ?__(7,"Sub-division Steps:") "0" "subdivisions"
-  param ?__(8,"X Z View:") "4.0" "scale_xz"
-  param ?__(9,"Y Scale:") "16000.0" "scale_y"
-  param ?__(10,"X View Translate:") "-2.0" "trl_x"
-  param ?__(11,"Y Translate:") "32767.0" "trl_y"
-  param ?__(12,"Z View Translate:") "-2.0" "trl_z"
+  param ?__(6,"Size:") 64 pixel_width
+  param ?__(7,"Sub-division Steps:") 0 subdivisions
+  param ?__(8,"X Z View:") 4.0 scale_xz
+  param ?__(9,"Y Scale:") 16000.0 scale_y
+  param ?__(10,"X View Translate:") -2.0 trl_x
+  param ?__(11,"Y Translate:") 32767.0 trl_y
+  param ?__(12,"Z View Translate:") -2.0 trl_z
 }
 params_set {
-  export_param "tesselation"  "'triangulate'"
-  export_param "include_uvs"  "'false'"
-  export_param "subdivisions" "params/subdivisions"
-  export_param "include_normals" "'false'"
-  export_param "include_hard_edges" "'true'"
+  export_param tesselation  'triangulate'
+  export_param include_uvs  'false'
+  export_param subdivisions %[params/subdivisions]
+  export_param include_normals 'false'
+  export_param include_hard_edges 'true'
 }
 extensions {
-  ext ".pgm" ?__(5,"Portable Grey Map")
+  ext .pgm ?__(5,"Portable Grey Map")
 }

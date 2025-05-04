@@ -1,16 +1,16 @@
 params_title ?__(3,"Object Geometry Exporter Settings")
 params_init {
-  do "1>$'subdivisions'"
+  do %[1>$'subdivisions']
 }
 params_templates {
-  template "export" "include_colors"
+  template export include_colors
 }
 params_set {
-  export_param "include_uvs"  "bool(params/include_uvs)"
-  export_param "subdivisions" "params/subdivisions"
-  export_param "include_hard_edges" "'true'"
-  export_param "script_texture_convert" "'user'"
+  export_param include_uvs  %[bool(params/include_uvs)]
+  export_param subdivisions %[params/subdivisions]
+  export_param include_hard_edges 'true'
+  export_param script_texture_convert 'user'
 }
 extensions {
-  ext ".off" ?__(5,"OFF Geometry")
+  ext .off ?__(5,"OFF Geometry")
 }

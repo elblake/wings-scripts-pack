@@ -1,15 +1,15 @@
 params_title ?__(3,"Godot Mesh Library Exporter Settings")
 params_templates {
-  template "export" "include_colors"
+  template export include_colors
 }
 params_set {
-  export_param "tesselation"  "'triangulate'"
-  export_param "include_uvs"  "'true'"
-  export_param "subdivisions" "params/subdivisions"
-  export_param "include_normals" "'true'"
-  export_param "include_hard_edges" "bool(params/include_normals)"
-  export_param "script_texture_convert" "'user'"
+  export_param tesselation  'triangulate'
+  export_param include_uvs  'true'
+  export_param subdivisions %[params/subdivisions]
+  export_param include_normals 'true'
+  export_param include_hard_edges %[bool(params/include_normals)]
+  export_param script_texture_convert 'user'
 }
 extensions {
-  ext ".tres" ?__(5,"Godot Mesh Library")
+  ext .tres ?__(5,"Godot Mesh Library")
 }

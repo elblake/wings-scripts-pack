@@ -47,8 +47,7 @@
 			;	(wings-set-variable! "test" '(1 2 3 4))
 			;	(wings-query "1")
 			
-				(newline)
-				(write '(ok))
+				'(ok)
 				))
 		)
 
